@@ -1,0 +1,40 @@
+DROP TABLE EMP;
+DROP TABLE DEPT;
+
+-- 부서
+CREATE TABLE DEPT (
+    DEPTNO NUMBER(2),    -- 부서번호
+    DNAME  VARCHAR2(14), -- 부서명
+    LOC    VARCHAR2(13), -- 지역명
+    CONSTRAINT PK_DEPT_DEPTNO PRIMARY KEY(DEPTNO) -- 메인키
+);
+
+-- 사원
+
+CREATE TABLE EMP (
+    EMPNO    NUMBER(4) CONSTRAINT PK_EMP_EMPNO PRIMARY KEY, -- 사원번호
+    ENAME    VARCHAR2(10), -- 사원명
+    JOB      VARCHAR2(9),  -- 업무명
+    MGR      NUMBER(4),    -- 상사번호(사원번호)
+    HIREDATE DATE,         -- 입사일
+    SAL      NUMBER(7,2),  -- 급여
+    COMM     NUMBER(7,2),  -- 커미션
+    DEPTNO   NUMBER(2) CONSTRAINT FK_EMP_DEPTNO REFERENCES DEPT(DEPTNO)
+);
+
+-- 보너스
+DROP TABLE BONUS;
+CREATE TABLE BONUS (
+    ENAME    VARCHAR2(10), -- 사원명
+    JOB      VARCHAR2(9),  -- 업무명
+    SAL      NUMBER(7,2),  -- 급여
+    COMM     NUMBER(7,2)   -- 커미션
+);
+
+-- 급여등급
+DROP TABLE SALGRADE;
+CREATE TABLE SALGRADE (
+    GRADE NUMBER,
+    LOSAL NUMBER,
+    HISAL NUMBER
+);
