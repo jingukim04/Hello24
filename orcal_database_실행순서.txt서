@@ -1,0 +1,40 @@
+오라클 접속
++ SYSTEM 생성(DB) OR KIMDBA
++ 새로만들기 (본인이 생성한 시스템으로 접속) 
++ 입력 : ALTER SESSION SET "_ORACLE_SCRIPT" = true;
++ 실행 : Ctrl + ENTER
+
+1. (보기)  (DBA) 창 선택 
+-- DBA 창에 + 누르고 시스템 접속 
+-- 저장 영역 --> 테이블스페이스 (우클릭) --> 새로만들기
+-- KIMDB 생성 -> 파일 생성(같은 이름) --> 디렉토리 (오라클이 있는 ORCL)로 설정
+-- 파일크기 10M 
+-- 자동확장 설정 --> 10M --> 제한없음 선택 
+-- DDL 생성 --> 복붙 --> 메모장 저장 
+-- 보안 -> 사용자(우클릭) --> 새로만들기 
+--> HELLOUSER (비번 새로만들기)  -> 기본 테이블 스페이스 (HELLODB) + 임시 테이블 스페이스 (TEMP) 
+
+-- 부여된 툴:
+-- CONNECT -> RESOURCE
+
+-- 시스템 권한
+-- SEQUENCE (CREATE + SYNONYM + TRIGGER + VIEW) 
+
+-- 할당량 : HELLODB 선택 (무제한) 
+
+-- 접속 (+) 선택 
+--  이름 : HELLOUSER 비번: HELLOUSER
+-- 포트 : 1521
+-- SID  : orcl
+-- 테스트 --> 성공이면 접속 
+
+2. GITHUB (선생님)에서 scott 파일 불러오기 
+-- 새로만들기 -> scott 복붙 --> scott-insert 복붙 
+
+3. scott 복붙 하고 f5 또는 ctrl + enter 로 실행 
+-- 실행안되면 DROP 부분 전부 삭제후 실행 --> 다시 작성 
+
+4, 원리 DEPT 부모 // EMP 자식 (서로 연결됨 그러므로 보너스와 급여등급은 문제없음)
+생성할 때 --> 부모 먼저 (DEPT) 먼저 작성
+DROP 할 때 --> 자식 먼저 (EMP) 먼저 작성 
+
