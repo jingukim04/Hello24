@@ -1,0 +1,10 @@
+파일 업로드 법
+git pull         -- 기존 깃허브와 일치시키기
+git push -u origin main
+git add .
+git status 	-- 파일 확인
+git commit -m "added 텍스트.txt"
+git push 
+
+-- fetch 가 메인이 아니면 -> branch 
+git branch -M main 
