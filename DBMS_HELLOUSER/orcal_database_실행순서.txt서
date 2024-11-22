@@ -1,5 +1,5 @@
 오라클 접속
-+ SYSTEM 생성(DB) OR KIMDBA
++ SYSTEM 생성(DB) --> 시스템 다만들고 dba를 만들 대는 KIMDBA
 + 새로만들기 (본인이 생성한 시스템으로 접속) 
 + 입력 : ALTER SESSION SET "_ORACLE_SCRIPT" = true;
 + 실행 : Ctrl + ENTER
@@ -10,12 +10,12 @@
 -- KIMDB 생성 -> 파일 생성(같은 이름) --> 디렉토리 (오라클이 있는 ORCL)로 설정
 -- 파일크기 10M 
 -- 자동확장 설정 --> 10M --> 제한없음 선택 
--- DDL 생성 --> 복붙 --> 메모장 저장 
+-- DDL 생성 --> 메모장 복붙 -->   ALTER SESSION SET "_ORACLE_SCRIPT" = true; 입력했던 곳에 복붙 하고 contrl + enter
 -- 보안 -> 사용자(우클릭) --> 새로만들기 
 --> HELLOUSER (비번 새로만들기)  -> 기본 테이블 스페이스 (HELLODB) + 임시 테이블 스페이스 (TEMP) 
 
 -- 부여된 툴:
--- CONNECT -> RESOURCE
+-- CONNECT + RESOURCE
 
 -- 시스템 권한
 -- SEQUENCE (CREATE + SYNONYM + TRIGGER + VIEW) 
